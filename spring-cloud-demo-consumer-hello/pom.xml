@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jhj</groupId>
-    <artifactId>spring-cloud-demo-cunsumer-hello</artifactId>
+    <artifactId>spring-cloud-demo-consumer-hello</artifactId>
     <packaging>jar</packaging>
 
-    <name>spring-cloud-demo-cunsumer-hello</name>
+    <name>spring-cloud-demo-consumer-hello</name>
     <url>http://maven.apache.org</url>
 
     <properties>

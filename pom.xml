@@ -11,7 +11,8 @@
         <module>spring-cloud-demo-eureka-server</module>
         <module>spring-cloud-demo-provider-hello</module>
         <module>spring-cloud-demo-commons</module>
-        <module>spring-cloud-demo-cunsumer-hello</module>
+        <module>spring-cloud-demo-consumer-hello</module>
+        <module>spring-cloud-demo-zuul</module>
     </modules>
     
 </project>
