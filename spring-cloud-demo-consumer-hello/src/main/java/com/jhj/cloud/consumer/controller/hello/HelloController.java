@@ -1,4 +1,4 @@
-package com.jhj.cloud.consumer.hello;
+package com.jhj.cloud.consumer.controller.hello;
 
 import javax.annotation.Resource;
 
@@ -24,6 +24,8 @@ public class HelloController {
     public String hello() {
         return restTemplate.getForEntity("http://HELLO-SERVICE/hello", String.class).getBody();
     }
+    
+    
     
     public String helloFallback() {
         return "hello-fallback";
