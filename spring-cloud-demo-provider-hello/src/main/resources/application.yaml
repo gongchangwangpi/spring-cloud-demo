@@ -8,6 +8,9 @@ eureka:
 #      defaultZone: http://127.0.0.1:8760/eureka/,http://127.0.0.1:8761/eureka/
 #      defaultZone: http://127.0.0.1:8760/eureka/
       defaultZone: http://172.18.8.22:1111/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+      
       
 spring:
   application:
