@@ -9,3 +9,6 @@ eureka:
 spring:
   application:
     name: hello-consumer
+    
+# feign log, only debug 
+logging.level.com.jhj.cloud.consumer.service: DEBUG
