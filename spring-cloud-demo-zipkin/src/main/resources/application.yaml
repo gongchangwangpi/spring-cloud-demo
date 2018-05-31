@@ -13,4 +13,12 @@ eureka:
 spring:
   application:
     name: zipkin-server
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/zipkin
+    username: root
+    password: root
     
+zipkin:
+  storage:
+    type: mysql
