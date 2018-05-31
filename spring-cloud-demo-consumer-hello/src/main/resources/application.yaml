@@ -5,10 +5,17 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8760/eureka/
+  instance:
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
       
 spring:
   application:
     name: hello-consumer
+  zipkin:
+    base-url: http://127.0.0.1:8100/
+  sleuth:
+    sampler:
+      percentage: 1
     
 # feign log, only debug 
 logging.level.com.jhj.cloud.consumer.service: DEBUG

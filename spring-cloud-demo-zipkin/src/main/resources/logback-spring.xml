@@ -36,7 +36,7 @@
     </appender>
     ​
     <!-- Appender to log to file in a JSON format -->
-    <appender name="logstashFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!--<appender name="logstashFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_FILE}.json</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_FILE}.json.%d{yyyy-MM-dd}.gz</fileNamePattern>
@@ -66,7 +66,7 @@
                 </pattern>
             </providers>
         </encoder>
-    </appender>
+    </appender>-->
     
     
     <!--<appender name="logstashSocket" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
@@ -99,9 +99,9 @@
     ​
     <root level="INFO">
         <appender-ref ref="console"/>
+        <appender-ref ref="flatfile"/>
         <!-- uncomment this to have also JSON logs -->
         <!--<appender-ref ref="logstashFile"/>-->
         <!--<appender-ref ref="logstashSocket"/>-->
-        <!--<appender-ref ref="flatfile"/>-->
     </root>
 </configuration>

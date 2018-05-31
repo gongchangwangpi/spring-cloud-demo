@@ -1,5 +1,5 @@
 server:
-  port: 8700
+  port: 8100
   
 eureka:
   client:
@@ -12,9 +12,5 @@ eureka:
     
 spring:
   application:
-    name: zuul-gateway
-  zipkin:
-    base-url: http://127.0.0.1:8100/
-  sleuth:
-    sampler:
-      percentage: 1
+    name: zipkin-server
+    

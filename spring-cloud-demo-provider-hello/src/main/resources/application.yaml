@@ -15,3 +15,8 @@ eureka:
 spring:
   application:
     name: hello-service
+  zipkin:
+    base-url: http://127.0.0.1:8100/
+  sleuth:
+    sampler:
+      percentage: 1

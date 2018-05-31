@@ -12,10 +12,6 @@
 
     <!-- Appender to log to console -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <!-- Minimum logging level to be presented in the console logs-->
-            <level>DEBUG</level>
-        </filter>
         <encoder>
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
             <charset>utf8</charset>
@@ -45,7 +41,8 @@
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
-                    <timeZone>UTC</timeZone>
+                    <timeZone>GMT+8</timeZone>
+                    <pattern>yyyy-MM-dd HH:mm:ss.SSS</pattern>
                 </timestamp>
                 <pattern>
                     <pattern>
@@ -73,7 +70,8 @@
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
-                    <timeZone>UTC</timeZone>
+                    <timeZone>GMT+8</timeZone>
+                    <pattern>yyyy-MM-dd HH:mm:ss.SSS</pattern>
                 </timestamp>
                 <pattern>
                     <pattern>
@@ -98,8 +96,8 @@
     <root level="INFO">
         <appender-ref ref="console"/>
         <!-- uncomment this to have also JSON logs -->
-        <!--<appender-ref ref="logstashFile"/>-->
-        <appender-ref ref="logstashSocket"/>
+        <appender-ref ref="logstashFile"/>
+        <!--<appender-ref ref="logstashSocket"/>-->
         <!--<appender-ref ref="flatfile"/>-->
     </root>
 </configuration>
