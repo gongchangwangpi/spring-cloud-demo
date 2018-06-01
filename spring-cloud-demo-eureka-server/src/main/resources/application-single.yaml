@@ -8,7 +8,7 @@ spring:
     base-url: http://127.0.0.1:8100/
   sleuth:
     sampler:
-      percentage: 1
+      percentage: 0.1
     
 eureka:
   instance:
