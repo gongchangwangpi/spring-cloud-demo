@@ -46,7 +46,6 @@
             <providers>
                 <timestamp>
                     <timeZone>GMT+8</timeZone>
-                    <pattern>yyyy-MM-dd HH:mm:ss.SSS</pattern>
                 </timestamp>
                 <pattern>
                     <pattern>
@@ -75,7 +74,6 @@
             <providers>
                 <timestamp>
 					<timeZone>GMT+8</timeZone>
-					<pattern>yyyy-MM-dd HH:mm:ss.SSS</pattern>
                 </timestamp>
                 <pattern>
                     <pattern>
