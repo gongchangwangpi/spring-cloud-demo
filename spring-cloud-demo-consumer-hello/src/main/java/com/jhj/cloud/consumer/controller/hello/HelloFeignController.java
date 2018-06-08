@@ -1,5 +1,7 @@
 package com.jhj.cloud.consumer.controller.hello;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.jhj.cloud.commons.dto.RestResultDto;
 import com.jhj.cloud.consumer.service.HelloService;
 
@@ -20,13 +22,22 @@ public class HelloFeignController {
     private HelloService helloService;
     
     @RequestMapping(value = "/feign/hello/{body}")
-    public RestResultDto hello(@PathVariable String body) {
+    public RestResultDto hello(@PathVariable String body, HttpServletRequest request) throws NoSuchFieldException, IllegalAccessException {
+        log.info("---->>> trace: {}", request.getAttribute("org.springframework.cloud.sleuth.instrument.web.TraceFilter.TRACE"));
         log.info("---->>> get {}", body);
+        
+        /*Thread currentThread = Thread.currentThread();
+        Class<Thread> threadClass = Thread.class;
+        Field threadLocals = threadClass.getDeclaredField("threadLocals");
+        threadLocals.setAccessible(true);
+        Object o = threadLocals.get(currentThread);*/
+
         return helloService.get(body);
     }
     
     @RequestMapping(value = "/feign/hello/post")
-    public RestResultDto helloPost(String body) {
+    public RestResultDto helloPost(String body, HttpServletRequest request) {
+        log.info("---->>> trace: {}", request.getAttribute("org.springframework.cloud.sleuth.instrument.web.TraceFilter.TRACE"));
         log.info("---->>> post {}", body);
         return helloService.post("post: " + body);
     }
