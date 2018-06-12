@@ -13,12 +13,14 @@ spring:
 eureka:
   instance:
     hostname: localhost
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
 #  单点注册中心，须关掉。因注册中心也算是一个服务，也会去找注册中心注册服务
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.instance-id}/eureka/
   server:
 #   关闭自我保护，注册中心在单点时，会开启自我保护功能，不能及时的清除已经下线的服务
 #   由此也可以看出，eureka是保持CAP中的AP，强调可用性，而zookeeper则强调一致性
